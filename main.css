@@ -202,3 +202,88 @@ footer
     margin-top: 15px;
     color: black;
 }
+
+.purchaseFormBox
+{
+    background: grey;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.purchaseBackground
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url(icon.png)
+}
+
+#individualChatForm
+{
+    display: none;
+    /* justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+}
+
+#privateOrganizationForm
+{
+    display: none;
+    /* justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+}
+
+#communityForm
+{
+    display: none;
+    /* justify-content: left;
+    align-items: center;
+    flex-direction: column; */
+}
+
+#purchaseTypeForm
+{
+    display: inline;
+    /* justify-content: left;
+    align-items: left;
+    flex-direction: column; */
+    
+}
+
+/* .StripeElement {
+    box-sizing: border-box;
+  
+    height: 40px;
+  
+    padding: 10px 12px;
+  
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+  
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+  
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+  
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+  
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  } */

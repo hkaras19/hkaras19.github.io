@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Group Study | Create a Group</title>
+        <meta name="author" content="Hunter Karas">
+        <link rel = "stylesheet" type = "text/css" href = "main.css">
+    </head>
+    <body>
+        <div class = "navBar">
+            <img src="icon.png", class = "logoImage">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="create.html">Create Groups</a></li>
+            </ul>
+        </div>
+
+        <form action="your-server-side-code" method="POST">
+            <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_0wMepbcFq0if7oVg1kMuXEb2"
+                data-amount="999"
+                data-name="Group Study"
+                data-description="Widget"
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto">
+            </script>
+        </form>
+
+    </body>
+</html>

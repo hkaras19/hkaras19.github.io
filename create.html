@@ -6,8 +6,12 @@
         <title>Group Study | Create a Group</title>
         <meta name="author" content="Hunter Karas">
         <link rel = "stylesheet" type = "text/css" href = "main.css">
+        <script src="main.js"></script>
     </head>
     <body>
+
+        <!-- Navigation Bar -->
+
         <div class = "navBar">
             <img src="icon.png", class = "logoImage">
             <ul>
@@ -16,5 +20,68 @@
                 <li><a href="create.html">Create Groups</a></li>
             </ul>
         </div>
+
+        <!-- Form section of the page -->
+        <div class="purchaseBackground">
+
+            <!-- Box for the form -->
+            <div class="purchaseFormBox">
+
+                <!-- Selecting the type for the purchase -->
+                <form id="purchaseTypeForm">
+                    <p id="testID">Select Purchase Type:</p>
+                    <input type="radio" name="formButton" value="Individual Chat"> Individual Chat<br>
+                    <input type="radio" name="formButton" value="Private Organization"> Private Organization<br>
+                    <input type="radio" name="formButton" value="Community"> Community<br><br>
+                    <button type="button" onclick="showNextForm()">Next</button>
+                </form>
+                
+                <!-- Creating an individual chat -->
+                <form id="individualChatForm">
+                    <p>Select Existing Group:</p>
+                    <select name="groups">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="fiat">Fiat</option>
+                            <option value="audi">Audi</option>
+                    </select>
+                    
+                    <p>Chat Name:</p>
+                    <input type="text" name="Private Organization" placeholder="Ex: Student Government"><br><br>
+                    <button type="button" onclick="showFirstForm()">Back</button>
+                    <button type="button" onclick="showPaymentForm()">Done</button>
+                    
+                </form>
+
+                <!-- Creating a private organization -->
+                <form id="privateOrganizationForm">
+                    <p id="testID">Name of Group:</p>
+                    <input type="text" name="Private Organization" placeholder="Ex: Punahou School"><br><br>
+
+                    <p id="testID">Support Email:</p>
+                    <input type="text" name="Private Organization" placeholder="Ex: HK@gmail.com"><br><br>
+
+
+                    <!-- Buttons -->
+                    <button type="button" onclick="showFirstForm()">Back</button>
+                    <button type="button" onclick="showNextForm()">Next</button>
+                    
+                </form>
+
+                <!-- Creating a community -->
+                <form id="communityForm">
+                    <p id="testID">Select Purchase Type:</p>
+                    <input type="radio" name="Individual Chat" id="Individual Chat"> Individual Chat<br>
+                    <input type="radio" name="Private Organization"> Private Organization<br>
+                    <input type="radio" name="Community"> Community<br><br>
+                    <button type="button" onclick="showFirstForm()">Back</button>
+                    <button type="button" onclick="showNextForm()">Next</button>
+                    
+                </form>
+
+            </div> 
+        </div>
+        
+
     </body>
 </html>
