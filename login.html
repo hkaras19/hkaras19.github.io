@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Group Study | Create a Group</title>
+        <meta name="author" content="Hunter Karas">
+        <link rel = "stylesheet" type = "text/css" href = "main.css">
+        <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    </head>
+    <body>
+        <div class = "navBar">
+            <img src="icon.png", class = "logoImage">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="createGroupInfo.html">Create Groups</a></li>
+            </ul>
+        </div>
+        <div class="box3">
+            <form class="loginForm">
+                <h1>Login</h1>
+                <input id="userLoginEmail" type="text" name="" placeholder="Email">
+                <input id="userLoginPassword" type="password" name="" placeholder="Password">
+                <button class="loginButton" onclick="login();">Login</button>
+                <!-- <input type="submit" name="" value="Login"> -->
+                <!-- <button class="loginButton">Done</button> -->
+            </form>
+        </div>
+
+
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
+
+        <script>
+
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCN6nWVaIj4mRZXavTa4eTQwiUO9LB2NT0",
+                authDomain: "group-study-ec5c5.firebaseapp.com",
+                databaseURL: "https://group-study-ec5c5.firebaseio.com",
+                projectId: "group-study-ec5c5",
+                storageBucket: "group-study-ec5c5.appspot.com",
+                messagingSenderId: "189423480805"
+            };
+
+            firebase.initializeApp(config);
+        </script>
+        <script src="main.js"></script>
+    </body>
+</html>

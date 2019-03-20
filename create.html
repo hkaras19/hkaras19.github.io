@@ -33,55 +33,83 @@
                     <input type="radio" name="formButton" value="Individual Chat"> Individual Chat<br>
                     <input type="radio" name="formButton" value="Private Organization"> Private Organization<br>
                     <input type="radio" name="formButton" value="Community"> Community<br><br>
-                    <button type="button" onclick="showNextForm()">Next</button>
+                    <button type="button" onclick="showNextForm();">Next</button>
                 </form>
                 
                 <!-- Creating an individual chat -->
                 <form id="individualChatForm">
                     <p>Select Existing Group:</p>
                     <select name="groups">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="fiat">Fiat</option>
-                            <option value="audi">Audi</option>
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="audi">Audi</option>
                     </select>
                     
                     <p>Chat Name:</p>
                     <input type="text" name="Private Organization" placeholder="Ex: Student Government"><br><br>
-                    <button type="button" onclick="showFirstForm()">Back</button>
-                    <button type="button" onclick="showPaymentForm()">Done</button>
+                    <button type="button" onclick="showFirstForm();">Back</button>
+                    <button type="button" onclick="showPaymentForm();">Done</button>
                     
                 </form>
 
                 <!-- Creating a private organization -->
                 <form id="privateOrganizationForm">
+                    <p id="testID">Name of Organization:</p>
+                    <input type="text" name="Private Organization" placeholder="Ex: Punahou School" id="Private organization name"><br><br>
+
+                    <p id="testID">Support Email:</p>
+                    <input type="text" name="Private Organization" placeholder="Ex: HK@gmail.com" id="Private support email"><br><br>
+
+                    <p id="testID">Access Code:</p>
+                    <input type="text" name="Private Organization" placeholder="Organization password" id="Private password"><br><br>
+
+                    <!-- Buttons -->
+                    <button type="button" onclick="showFirstForm();">Back</button>
+                    <button type="button" onclick="showChatCreate();">Next</button>
+                    
+                </form>
+
+                <!-- Creating a community -->
+                <form id="communityForm">
+                    <p id="testID">Name of Group:</p>
+                    <input type="text" name="Private Organization" placeholder="Ex: Punahou School" id="Organization name"><br><br>
+
+                    <p id="testID">Support Email:</p>
+                    <input type="text" name="Private Organization" placeholder="Ex: HK@gmail.com" id="Support email"><br><br>
+
+                    <!-- Buttons -->
+                    <button type="button" onclick="showFirstForm();">Back</button>
+                    <button type="button" onclick="showChatCreate();">Next</button>
+                    
+                </form>
+
+                <!-- Adding chats to organization -->
+                <form id="communityForm">
                     <p id="testID">Name of Group:</p>
                     <input type="text" name="Private Organization" placeholder="Ex: Punahou School"><br><br>
 
                     <p id="testID">Support Email:</p>
                     <input type="text" name="Private Organization" placeholder="Ex: HK@gmail.com"><br><br>
 
-
                     <!-- Buttons -->
-                    <button type="button" onclick="showFirstForm()">Back</button>
-                    <button type="button" onclick="showNextForm()">Next</button>
+                    <button type="button" onclick="showFirstForm();">Back</button>
+                    <button type="button" onclick="showPaymentForm();">Next</button>
                     
                 </form>
 
-                <!-- Creating a community -->
-                <form id="communityForm">
-                    <p id="testID">Select Purchase Type:</p>
-                    <input type="radio" name="Individual Chat" id="Individual Chat"> Individual Chat<br>
-                    <input type="radio" name="Private Organization"> Private Organization<br>
-                    <input type="radio" name="Community"> Community<br><br>
-                    <button type="button" onclick="showFirstForm()">Back</button>
-                    <button type="button" onclick="showNextForm()">Next</button>
-                    
-                </form>
-
+                <form action="your-server-side-code" method="POST" id="stripeForm">
+                        <script
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="pk_test_0wMepbcFq0if7oVg1kMuXEb2"
+                            data-amount="999"
+                            data-name="Group Study"
+                            data-description="Widget"
+                            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                            data-locale="auto">
+                        </script>
+                    </form>
             </div> 
         </div>
-        
-
     </body>
 </html>

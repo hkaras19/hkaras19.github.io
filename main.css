@@ -138,8 +138,9 @@ ul li a:hover:not(.active)
     height: 60px;
     border: 3px solid white;
     font-size: 20px;
-    font-family: 'Abril Fatface';
-    font-weight: bold;
+    /* font-family: 'Abril Fatface'; */
+    font-family: 'Courgette', cursive;
+    font-weight: normal;
     border-radius: 10px;
     /* transition: .6s;
     overflow: hidden;
@@ -157,6 +158,87 @@ ul li a:hover:not(.active)
     /* justify-content: center;
     margin: 0; */
 }
+
+.loginBox
+{
+    width: 500px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    /* top: 50%;
+    bottom: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px; */
+}
+
+.loginForm
+{
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #191919;
+    text-align: center;
+    border-radius: 40px
+}
+
+.loginForm input[type = "text"], .loginForm input[type="password"]
+{
+    border: 3px solid #56B9C1;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 10px;
+    width: 200px;
+    height: 15px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.loginForm input[type = "text"]:focus, .loginForm input[type="password"]:focus
+{
+    width: 280px;
+    border-color: #2ecc71;
+}
+
+.loginForm h1
+{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* .loginForm input[type = "submit"] */
+.loginButton
+{
+    border: 2px solid #2ecc71;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 40px;
+    width: 100px
+    height: 15px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+/* .loginForm input[type = "submit"]:hover */
+.loginButton:hover
+{
+    background: #2ecc71;
+}
+
 
 /* .button::before
 {
@@ -213,6 +295,7 @@ footer
     align-items: center;
     flex-direction: column;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .purchaseBackground
@@ -260,6 +343,25 @@ footer
     
 }
 
+input[type="text"]
+{
+    width: 200px;
+    height: 25px;
+    
+}
+
+#stripeForm
+{
+    display: none;
+}
+
+/* 
+input[type="radio"]:before
+{
+    -webkit-appearance: checkbox;
+    background: white;
+} */
+
 /* .StripeElement {
     box-sizing: border-box;
   
@@ -286,4 +388,10 @@ footer
   
   .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
+  } */
+
+  /* .createButtons
+  {
+      width: 100px;
+      height: 
   } */

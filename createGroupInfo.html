@@ -6,6 +6,7 @@
         <title>Group Study | Create a Group</title>
         <meta name="author" content="Hunter Karas">
         <link rel = "stylesheet" type = "text/css" href = "main.css">
+        <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
     </head>
     <body>
         <div class = "navBar">
@@ -13,13 +14,26 @@
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="terms.html">Terms</a></li>
-                <li><a href="create.html">Create Groups</a></li>
+                <li><a href="createGroupInfo.html">Create Groups</a></li>
             </ul>
         </div>
-
-        <button onclick = "window.location.href = 'create.html';">
-            Create a Group
-        </button>
-
+        
+        <span><h1 style="text-align: center; font-family: 'Courgette', cursive; font-size: 40px;">What You Need:</h1></span>
+        <div>
+            <ol style="font-size: 20px;">
+                <li>A Group Study account, which can be made through the app. Make sure to complete the entire signup process before returning!</li>
+                <br>
+                <li>An idea for a group chat</li>
+                <br>
+                <br>
+            </ol>
+        </div>
+    
+        <div style="display: flex; flex-direction: column; align-items: center; margin: 30px;">
+            <h1 style="text-align: left; font-family: 'Courgette', cursive; font-size: 35px;">Create An:</h1>
+            <button class="button" onclick = "window.location.href = 'login.html';">Individual Chat</button>
+            <button class="button" onclick = "window.location.href = 'notReady.html';">Public "Group"</button>
+            <button class="button" onclick = "window.location.href = 'notReady.html';">Private "Group"</button>
+        </div>
     </body>
 </html>
