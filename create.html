@@ -6,6 +6,26 @@
         <title>Group Study | Create a Group</title>
         <meta name="author" content="Hunter Karas">
         <link rel = "stylesheet" type = "text/css" href = "main.css">
+
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
+
+        <script>
+            
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCN6nWVaIj4mRZXavTa4eTQwiUO9LB2NT0",
+                authDomain: "group-study-ec5c5.firebaseapp.com",
+                databaseURL: "https://group-study-ec5c5.firebaseio.com",
+                projectId: "group-study-ec5c5",
+                storageBucket: "group-study-ec5c5.appspot.com",
+                messagingSenderId: "189423480805"
+            };
+
+            firebase.initializeApp(config);
+        </script>
         <script src="main.js"></script>
     </head>
     <body>
@@ -15,9 +35,9 @@
         <div class = "navBar">
             <img src="icon.png", class = "logoImage">
             <ul>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="terms.html">Terms</a></li>
-                <li><a href="create.html">Create Groups</a></li>
+                <li><a href="createGroupInfo.html">Create Groups</a></li>
             </ul>
         </div>
 
@@ -25,31 +45,36 @@
         <div class="purchaseBackground">
 
             <!-- Box for the form -->
-            <div class="purchaseFormBox">
+            <div class="loginForm">
 
                 <!-- Selecting the type for the purchase -->
-                <form id="purchaseTypeForm">
-                    <p id="testID">Select Purchase Type:</p>
+                <!-- <form id="purchaseTypeForm">
+                    <h1 id="testID">Select Purchase Type:</h1>
                     <input type="radio" name="formButton" value="Individual Chat"> Individual Chat<br>
                     <input type="radio" name="formButton" value="Private Organization"> Private Organization<br>
                     <input type="radio" name="formButton" value="Community"> Community<br><br>
                     <button type="button" onclick="showNextForm();">Next</button>
-                </form>
+                </form> -->
                 
                 <!-- Creating an individual chat -->
                 <form id="individualChatForm">
-                    <p>Select Existing Group:</p>
-                    <select name="groups">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="audi">Audi</option>
+                    <h1 style="font-size: 25px;">Select Existing Group:</h1>
+                    <select id="groups" name="groups">
+                        <option value="Math">Math</option>
+                        <option value="Science">Science</option>
+                        <option value="Electives">Electives</option>
+                        <option value="English">English</option>
+                        <option value="Extra Curricular">Extra Curricular</option>
+                        <option value="Language">Language</option>
                     </select>
-                    
-                    <p>Chat Name:</p>
-                    <input type="text" name="Private Organization" placeholder="Ex: Student Government"><br><br>
-                    <button type="button" onclick="showFirstForm();">Back</button>
-                    <button type="button" onclick="showPaymentForm();">Done</button>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h1 style="font-size: 25px;">Chat Name:</h1>
+                    <input id="chatNameInput" type="text" name="Private Organization" placeholder="Ex: Student Government"><br><br>
+                    <!-- <button type="button" onclick="showFirstForm();">Back</button> -->
+                    <input id="doneCreatingChatButton" type="button" onclick="checkCurrentGroups();" class="loginButton" value="Done" style="margin-top: 20px">
                     
                 </form>
 

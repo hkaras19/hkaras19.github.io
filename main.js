@@ -82,18 +82,17 @@ function showChatCreate()
 
 function login()
 {
-    alert("Here")
-    let email = document.getElementById("userLoginEmail").value;
-    let password = document.getElementById("userLoginPassword").value;
+    window.location = 'adminPage.html';
+    let userEmail = document.getElementById("userLoginEmail").value;
+    let userPassword = document.getElementById("userLoginPassword").value;
 
-    if (email == "" || password == "")
+    if (userEmail == "" || userPassword == "")
     {
         alert("Please fill out the information!");
     }
     else
     {
-        alert("Here")
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) 
+        firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).catch(function(error) 
         {
             var errorMessage = error.message;
             alert("Error: " + errorMessage);
@@ -101,24 +100,27 @@ function login()
     }      
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) 
-    {
-        alert("Logged In")
-      // User is signed in.
-    //   var displayName = user.displayName;
-    //   var email = user.email;
-    //   var emailVerified = user.emailVerified;
-    //   var photoURL = user.photoURL;
-    //   var isAnonymous = user.isAnonymous;
-    //   var uid = user.uid;
-    //   var providerData = user.providerData;
-      // ...
-    } 
-    else 
-    {
-        alert("No User")
-      // User is signed out.
-      // ...
-    }
-  });
+
+
+function checkCurrentGroups()
+{
+    let chatName = document.getElementById("chatNameInput").value;
+    let selectedGroup = document.getElementById("groups").value;
+
+    //alert('/Community/Global/' + selectedGroup.value)
+
+    return fireabase.database().ref('/Community/Global/Chats/').once('value').then(snap => {
+
+        alert("Here")
+
+        snap.forEach((childSnapshot) => {
+            if (childSnapshot.key == chatName)
+            {
+                alert("This chat already exists!")
+            }
+        })
+
+        //showPaymentForm();
+
+    })
+}
