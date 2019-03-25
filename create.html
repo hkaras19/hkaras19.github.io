@@ -7,6 +7,16 @@
         <meta name="author" content="Hunter Karas">
         <link rel = "stylesheet" type = "text/css" href = "main.css">
 
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122866528-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-122866528-1');
+        </script>
+
         <!-- Firebase -->
         <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
@@ -26,6 +36,7 @@
 
             firebase.initializeApp(config);
         </script>
+
         <script src="main.js"></script>
     </head>
     <body>
@@ -58,7 +69,7 @@
                 
                 <!-- Creating an individual chat -->
                 <form id="individualChatForm">
-                    <h1 style="font-size: 25px;">Select Existing Group:</h1>
+                    <h1 style="font-size: 25px;">Select Topic:</h1>
                     <select id="groups" name="groups">
                         <option value="Math">Math</option>
                         <option value="Science">Science</option>
@@ -67,8 +78,6 @@
                         <option value="Extra Curricular">Extra Curricular</option>
                         <option value="Language">Language</option>
                     </select>
-                    <br>
-                    <br>
                     <br>
                     <br>
                     <h1 style="font-size: 25px;">Chat Name:</h1>
@@ -123,17 +132,18 @@
                     
                 </form>
 
-                <form action="your-server-side-code" method="POST" id="stripeForm">
-                        <script
-                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                            data-key="pk_test_0wMepbcFq0if7oVg1kMuXEb2"
-                            data-amount="999"
-                            data-name="Group Study"
-                            data-description="Widget"
-                            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                            data-locale="auto">
-                        </script>
-                    </form>
+                <form action="paymentComplete();" method="POST" id="stripeForm">
+                    <h1 style="font-size: 25px;">Summary</h1>
+                    <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_0wMepbcFq0if7oVg1kMuXEb2"
+                        data-amount="999"
+                        data-name="Group Study"
+                        data-description="Widget"
+                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                        data-locale="auto">
+                    </script>
+                </form>
             </div> 
         </div>
     </body>

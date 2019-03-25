@@ -4,6 +4,8 @@ var purchaseType = "";
 var supportEmail = "";
 var accessCode = "";
 var organizationName = "";
+var chatName = "";
+var selectedGroup  = "";
 
 // Transistions from the purchase type form to the specific form
 function showNextForm()
@@ -55,10 +57,11 @@ function showFirstForm()
 
 function showPaymentForm()
 {
-    document.getElementById("purchaseTypeForm").style.display = "none"
-    document.getElementById("privateOrganizationForm").style.display = "none"
-    document.getElementById("communityForm").style.display = "none"
+    // document.getElementById("purchaseTypeForm").style.display = "none"
+    // document.getElementById("privateOrganizationForm").style.display = "none"
+    // document.getElementById("communityForm").style.display = "none"
     document.getElementById("individualChatForm").style.display = "none"
+    document.getElementById("stripeForm").style.display = "inline"
 }
 
 function showChatCreate()
@@ -104,23 +107,26 @@ function login()
 
 function checkCurrentGroups()
 {
-    let chatName = document.getElementById("chatNameInput").value;
-    let selectedGroup = document.getElementById("groups").value;
+    chatName = document.getElementById("chatNameInput").value;
+    selectedGroup = document.getElementById("groups").value;
 
-    //alert('/Community/Global/' + selectedGroup.value)
-
-    return fireabase.database().ref('/Community/Global/Chats/').once('value').then(snap => {
-
-        alert("Here")
-
-        snap.forEach((childSnapshot) => {
-            if (childSnapshot.key == chatName)
+    if (chatName)
+    {
+        firebase.database().ref('/Community/Global/Chats/').on('value', function(snapshot) 
+        {
+            snapshot.forEach(function(childSnapshot) 
             {
-                alert("This chat already exists!")
-            }
-        })
+                if (childSnapshot.key == chatName)
+                {
+                    alert("This chat already exists!")
+                }
+            });
 
-        //showPaymentForm();
-
-    })
+            showPaymentForm();
+        });
+    }
+    else
+    {
+        alert("Please fill out the information!");
+    }
 }
