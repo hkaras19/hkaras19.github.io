@@ -7,7 +7,7 @@
         <meta name="author" content="Hunter Karas">
         <link rel = "stylesheet" type = "text/css" href = "main.css">
         <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
-        
+
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122866528-1"></script>
         <script>
@@ -17,8 +17,30 @@
 
             gtag('config', 'UA-122866528-1');
         </script>
+
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
+
+        <script>
+            
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCN6nWVaIj4mRZXavTa4eTQwiUO9LB2NT0",
+                authDomain: "group-study-ec5c5.firebaseapp.com",
+                databaseURL: "https://group-study-ec5c5.firebaseio.com",
+                projectId: "group-study-ec5c5",
+                storageBucket: "group-study-ec5c5.appspot.com",
+                messagingSenderId: "189423480805"
+            };
+
+            firebase.initializeApp(config);
+        </script>
+
+        <script src="main.js"></script>
     </head>
-    <body>
+    <body onload="getUserSubscriptions();">
         <div class = "navBar">
             <img src="icon.png", class = "logoImage">
             <ul>
@@ -31,25 +53,20 @@
         <span><h1 style="text-align: center; font-family: 'Courgette', cursive; font-size: 40px;">Admin Page</h1></span>
         <div>
             <span><h1 style="text-align: left; font-size: 25px; margin: 30px;">My Subscriptions:</h1></span>
-            <table style="width: 90%">
+            <span style="margin: 30px"><input type="button" onclick = "getUserSubscriptions();" value="Reload"></span>
+            <table style="width: 90%" id="adminTable">
                 <tr>
                     <th>Chat</th>
-                    <!-- <th>Group</th> 
-                    <th>Catagory</th> -->
                     <th>Unsubscribe</th>
                 </tr>
                 <tr>
-                    <td>Jill</td>
-                    <!-- <td>Smith</td> 
-                    <td>50</td> -->
+                    <td>No Subscriptions Yet!</td>
                     <td>Unsubscribe</td>
                 </tr>
-                <tr>
-                    <td>Eve</td>
-                    <!-- <td>Jackson</td> 
-                    <td>94</td> -->
+                <!-- <tr>
+                    <td>Student Government</td>
                     <td>Unsubscribe</td>
-                </tr>
+                </tr> -->
             </table>
         </div>   
     

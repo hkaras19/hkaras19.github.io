@@ -130,3 +130,42 @@ function checkCurrentGroups()
         alert("Please fill out the information!");
     }
 }
+
+function updateTable(chatName)
+{
+    var table = document.getElementById("adminTable");
+    var row = table.insertRow(1);
+    var chatCell = row.insertCell(0);
+    var unsubscribeCell = row.insertCell(1);
+    chatCell.innerHTML = chatName;
+    unsubscribeCell.innerHTML = "Unsubscribe";
+}
+
+function test()
+{
+    alert("The test worked!")
+}
+
+function getUserSubscriptions()
+{
+    var uid = firebase.auth().currentUser.uid;
+
+    firebase.database().ref('/Users/' + uid + '/Subscriptions').on('value', function(snapshot) 
+    {
+        if (snapshot.exists())
+        {
+            var table = document.getElementById("adminTable");
+            table.deleteRow(1);
+            snapshot.forEach(function(childSnapshot) 
+            {
+                childSnapshot.forEach(function(secondChildSnapshot) 
+                {
+                    if (secondChildSnapshot.key == "Chat")
+                    {
+                        updateTable(secondChildSnapshot.val());
+                    } 
+                });
+            });
+        }
+    });
+}
