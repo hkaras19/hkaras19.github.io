@@ -5,7 +5,7 @@ var supportEmail = "";
 var accessCode = "";
 var organizationName = "";
 var chatName = "";
-var selectedGroup  = "";
+var selectedTopic  = "";
 
 // Transistions from the purchase type form to the specific form
 function showNextForm()
@@ -108,7 +108,7 @@ function login()
 function checkCurrentGroups()
 {
     chatName = document.getElementById("chatNameInput").value;
-    selectedGroup = document.getElementById("groups").value;
+    selectedTopic = document.getElementById("groups").value;
 
     if (chatName)
     {
@@ -168,4 +168,9 @@ function getUserSubscriptions()
             });
         }
     });
+}
+
+function createGroup()
+{
+    firebase.database().ref('/Community/Global/' + selectedTopic + '/' + chatName).set(chatName);
 }
