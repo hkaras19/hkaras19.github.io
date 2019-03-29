@@ -43,14 +43,20 @@
 
         <!-- Navigation Bar -->
 
-        <div class = "navBar">
-            <img src="icon.png", class = "logoImage">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="terms.html">Terms</a></li>
-                <li><a href="createGroupInfo.html">Create Groups</a></li>
-            </ul>
-        </div>
+        <header>
+            <div class="container">
+                <div id="branding">
+                    <img src="../hkaras19.github.io/images/icon.png", class = "logoImage">
+                </div> 
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="createGroupInfo.html">Create Groups</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
         <!-- Form section of the page -->
         <div class="purchaseBackground">
@@ -132,7 +138,19 @@
                     
                 </form>
 
-                <form action="paymentComplete();" method="POST" id="stripeForm">
+                <form action="/create_subscription.php" method="POST" id="stripeForm">
+                    <script
+                      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="pk_test_z0bJsb7iyMamOays98OqWPMr"
+                      data-image="/images/marketplace.png"
+                      data-name="Individual Chat"
+                      data-description="One chat: $9.99 monthly."
+                      data-amount="999"
+                      data-label="Sign Me Up!">
+                    </script>
+                  </form>
+
+                <!-- <form action="paymentComplete();" method="POST" id="stripeForm">
                     <h1 style="font-size: 25px;">Summary</h1>
                     <script
                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -143,7 +161,7 @@
                         data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                         data-locale="auto">
                     </script>
-                </form>
+                </form> -->
             </div> 
         </div>
     </body>
